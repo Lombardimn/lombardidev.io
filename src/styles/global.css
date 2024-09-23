@@ -1,0 +1,427 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .menu-button[hidden] {
+    @apply hidden;
+  }
+}
+
+@layer base {
+  :root {
+    --c-0: #090b11;
+    --c-50: #141925;
+    --c-100: #283044;
+    --c-200: #3d4663;
+    --c-300: #505d84;
+    --c-400: #6474a2;
+    --c-500: #8490b5;
+    --c-600: #a3acc8;
+    --c-700: #c3cadb;
+    --c-800: #e3e6ee;
+    --c-900: #f3f4f7;
+    --c-999-basis: 0, 0%, 100%;
+    --c-999-40: hsla(var(0, 0%, 100%), 0.4);
+    --c-999: #E6EEF5;
+
+    --accent-light: #05F283;
+    --accent-regular: #00ec98;
+    --accent-dark: #078C5B;
+    --accent-overlay: #bcbcbc;
+    --accent-subtle-overlay: var(--accent-overlay);
+    --accent-text-over: #02080D;
+
+    --theme-transition: 0.2s ease-in-out;
+  }
+
+
+  html {
+    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Helvetica Neue', sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    line-height: 1.1;
+    font-family: "Rubik";
+    font-weight: 600;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: var(--accent-regular);
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/Rubik-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-ThinItalic.ttf") format("truetype");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-ExtraLightItalic.ttf") format("truetype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Public Sans";
+    src: url("/fonts/Public_Sans/PublicSans-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+}

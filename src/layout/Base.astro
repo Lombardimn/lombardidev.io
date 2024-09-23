@@ -1,0 +1,35 @@
+---
+import Footer from '@/components/Footer/Footer.astro'
+import Head from '@/components/Head/Head.astro'
+import Navbar from '@/components/Header/Navbar.astro'
+import '@/styles/global.css'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="es">
+	<head>
+    <Head title={title} description={description}/>
+	</head>
+	<body class="bg-c-999 text-c-50 flex flex-col leading-normal">
+    <Navbar />
+    <main class="px-6">
+      <slot />
+    </main>
+    <Footer />
+    
+    <script>
+      // Inserta una clase “loaded” cuando el contenido de la página se ha cargado.
+			addEventListener('load', () => 
+        document.documentElement.classList.add('loaded')
+      )
+    </script>
+
+    <script src='../scripts/menuButton.ts'/>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+---
+import type { iconPaths } from '@/utils/iconsPath'
+import Icon from './Icon.astro'
+
+interface Props {
+  iconDescription: keyof typeof iconPaths
+  title: string
+  color?: string
+  size?: string
+}
+
+const { iconDescription, title, color, size } = Astro.props
+---
+<article class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2">
+    <Icon icon={iconDescription} color={color} size={size} gradient />
+    <h2 class="text-large">{title}</h2>
+  </div>
+  <p class="text-c-400">
+    <slot />
+  </p>
+</article>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  greeting?: string
+  name?: string
+  profession?: string
+  align: 'center' | 'start'
+}
+
+const { greeting, name, profession, align } = Astro.props
+---
+
+<article class:list={['text-xlarge items-center flex flex-col gap-4', align]}>
+  <div class="flex flex-col gap-2">
+    <h1 class="max-w-[37ch] mx-auto text-start text-3xlarge text-c-0 text-balance">
+      {greeting}
+      <span class="text-accent-regular block">
+        {name}
+      </span>
+    </h1>
+    <span class="max-w-[37ch] text-start text-large font-alternative font-medium">{profession}</span>
+    <slot />
+  </div>
+</article>

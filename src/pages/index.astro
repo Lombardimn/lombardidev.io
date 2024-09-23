@@ -1,16 +1,97 @@
 ---
+import CallToAction from "@/components/Global/CallToAction.astro"
+import Hero from "@/components/Global/Hero.astro"
+import Icon from "@/components/Global/Icon.astro"
+import Pill from "@/components/Global/Pill.astro"
+import Skill from "@/components/Global/Skill.astro"
+import Base from "@/layout/Base.astro"
 
+interface Props {
+  title: string
+  description: string
+}
+
+const { title , description } = Astro.props
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title={title} description={description}>
+	<section class="flex flex-col gap-20">
+    <div class="flex flex-col w-full max-w-[83rem] mx-auto gap-8">
+      <section class="flex flex-col items-center gap-8">
+        <Hero 
+          align="start"
+          greeting="Hola a todos 👋!"
+          name="Soy Matias Lombardi"
+          profession="Desarrollador Web & Product Owner"
+        >
+          <article class="hidden">
+            <Pill>
+              <Icon icon="code" size="1.33rem" />
+              Metódico
+            </Pill>
+
+            <Pill>
+              <Icon icon="microphone-stage" size="1.33rem" />
+              Comunicativo
+            </Pill>
+            <Pill>
+              <Icon icon="change" size="1.33rem" />
+              Adaptable
+            </Pill>
+            <Pill>
+              <Icon icon="strategy" size="1.33rem" />
+              Analítico
+            </Pill>
+            <Pill>
+              <Icon icon="trophy" size="1.33rem" />
+              Negociador
+            </Pill>
+          </article>
+        </Hero>
+
+        <img src="/images/main-1.png" alt="figura animada que representa a Matias Lombardi sentado en un escritorio." class="">
+        <div class="w-80 pt-4 m-auto">
+          <CallToAction 
+            href="/docs/lombardi-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative flex py-2 px-8 rounded-full overflow-hidden shadow-bs-md text-center text-large text-accent-text-over no-underline leading-tight whitespace-nowrap place-content-center gap-3 transition ease-in-out duration-200 hover:scale-105 hover:outline hover:outline-2 hover:outline-accent-overlay focus:scale-105 focus:outline focus:outline-2 focus:outline-accent-overlay after:content-[''] after:absolute after:inset-0 after:pointer-events-none bg-gradient-to-r from-accent-dark via-accent-regular to-accent-dark dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0" >
+            Descargar CV
+          </CallToAction>
+        </div>
+
+        <section class="border-2 border-solid border-c-800 rounded-xl p-6 bg-c-999-40 shadow-sm flex flex-col gap-12">
+          <Skill iconDescription="monitor" title="Desarrollo Web" color="bg-accent-regular" size="2.5rem">
+            Mi objetivo es crear experiencias atractivas e intuitivas. Me apasiona enfrentar desafíos de la industria y contribuir al crecimiento.
+          </Skill>
+
+          <Skill iconDescription="terminal-window" title="Backend & Frontend" color="bg-d-accent-regular" size="2.5rem">
+            Este rol me ofrece adaptabilidad en distintos proyectos y roles de desarrollo, brindándome valiosas oportunidades de aprendizaje.
+          </Skill>
+
+          <Skill iconDescription="strategy" title="Product Owner" color="bg-d-accent-regular" size="2.5rem">
+            Traduzco requerimientos de clientes en soluciones tecnológicas. Mi rol va desde analizar necesidades, diseñar y planificar, hasta colaborar con equipos de desarrollo.
+          </Skill>
+        </section>
+      </section>
+    </div>
+
+    <div class="flex flex-col w-full max-w-[83rem] mx-auto gap-8">
+      <section class="grid gap-8">
+        <article class=" justify-self-center items-center max-w-[50ch] text-medium text-c-300 flex flex-col gap-2">
+          <h3 class="text-2xlarge">Proyectos</h3>
+          <p>Echa un vistazo a algunos de mis trabajos destacados.</p>
+        </article>
+        <article>
+          Proyectos varios
+        </article>
+        <div class="w-80 pt-4 m-auto">
+          <CallToAction href="/work/" target="_self" class="relative flex py-2 px-8 rounded-full overflow-hidden shadow-bs-md text-center text-large text-accent-text-over no-underline leading-tight whitespace-nowrap place-content-center gap-3 transition ease-in-out duration-200 hover:scale-105 hover:outline hover:outline-2 hover:outline-accent-overlay focus:scale-105 focus:outline focus:outline-2 focus:outline-accent-overlay after:content-[''] after:absolute after:inset-0 after:pointer-events-none bg-gradient-to-r from-accent-dark via-accent-regular to-accent-dark dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0">
+            Ver proyectos
+            <Icon icon="arrow-right" size="1.6rem" />
+          </CallToAction>
+        </div>
+      </section>
+    </div>
+  </section>
+</Base>

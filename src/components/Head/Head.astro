@@ -1,0 +1,54 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  content?: string
+  url?: string
+  domain?: string
+}
+
+const {
+  title = 'Lombardi Matias | Personal Website',
+  description = 'Web personal de Lombardi Matias, Proyectos y Servicios',
+  image = 'https://lombardidev.ar/assets/icons/logo2.png',
+  content = 'Marca descriptiva de @lombardidev',
+  url = 'https://lombardidev.ar',
+  domain = 'lombardidev.ar'
+} = Astro.props
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content={content} />
+
+<!-- Open Graph / Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={url} />
+<meta property="twitter:domain" content={domain} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={image} />
+<meta property="twitter:image:alt" content={content} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href='/logomain.webp'>
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" href="/rss/feed.xml" />
+
+<ViewTransitions fallback="none" />

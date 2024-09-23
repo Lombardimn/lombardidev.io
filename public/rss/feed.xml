@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Mi Sitio Web</title>
+    <link>https://www.misitio.com</link>
+    <description>Actualizaciones recientes</description>
+    <item>
+      <title>Título de la Entrada</title>
+      <link>https://www.misitio.com/entrada-1</link>
+      <description>Descripción breve de la entrada</description>
+      <pubDate>Mon, 19 Sep 2024 14:00:00 GMT</pubDate>
+    </item>
+    <!-- Más items -->
+  </channel>
+</rss>
