@@ -1,0 +1,14 @@
+---
+interface Props {
+  variant?: 'offset' | 'small'
+}
+
+const { variant } = Astro.props
+---
+
+<ul class:list={['grid auto-rows-fr gap-4 list-none p-0', {
+  offset: variant === 'offset' && 'pb-32',
+  small: variant === 'small'  && 'grid-cols-2 gap-6 last:odd:col-start-1 last:odd:col-end-3'
+}]}>
+  <slot />
+</ul>

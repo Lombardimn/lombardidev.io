@@ -1,10 +1,14 @@
 ---
 import CallToAction from "@/components/Global/CallToAction.astro"
+import Contact from "@/components/Global/Contact.astro"
+import Grid from "@/components/Global/Grid.astro"
 import Hero from "@/components/Global/Hero.astro"
 import Icon from "@/components/Global/Icon.astro"
 import Pill from "@/components/Global/Pill.astro"
+import PorfolioPreview from "@/components/Global/PorfolioPreview.astro"
 import Skill from "@/components/Global/Skill.astro"
 import Base from "@/layout/Base.astro"
+import { getCollection, type CollectionEntry } from "astro:content"
 
 interface Props {
   title: string
@@ -12,8 +16,14 @@ interface Props {
 }
 
 const { title , description } = Astro.props
----
 
+const works: CollectionEntry<'projects'>[] = (await getCollection("projects"))
+  .sort((a:CollectionEntry<"projects">, b:CollectionEntry<"projects">) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+  )
+  .slice(0,4)
+
+console.log(works.length)
+---
 <Base title={title} description={description}>
 	<section class="flex flex-col gap-20">
     <div class="flex flex-col w-full max-w-[83rem] mx-auto gap-8">
@@ -60,7 +70,7 @@ const { title , description } = Astro.props
           </CallToAction>
         </div>
 
-        <section class="border-2 border-solid border-c-800 rounded-xl p-6 bg-c-999-40 shadow-sm flex flex-col gap-12">
+        <section class="border-2 border-solid border-c-800 rounded-xl p-6 bg-c-999-40 shadow-bs-sm flex flex-col gap-12">
           <Skill iconDescription="monitor" title="Desarrollo Web" color="bg-accent-regular" size="2.5rem">
             Mi objetivo es crear experiencias atractivas e intuitivas. Me apasiona enfrentar desafíos de la industria y contribuir al crecimiento.
           </Skill>
@@ -83,15 +93,24 @@ const { title , description } = Astro.props
           <p>Echa un vistazo a algunos de mis trabajos destacados.</p>
         </article>
         <article>
-          Proyectos varios
+          <Grid variant="offset">
+            {
+              works.map((project) => (
+                  <li>
+                    <PorfolioPreview project={project} />
+                  </li>
+              ))
+            }
+          </Grid>
         </article>
         <div class="w-80 pt-4 m-auto">
-          <CallToAction href="/work/" target="_self" class="relative flex py-2 px-8 rounded-full overflow-hidden shadow-bs-md text-center text-large text-accent-text-over no-underline leading-tight whitespace-nowrap place-content-center gap-3 transition ease-in-out duration-200 hover:scale-105 hover:outline hover:outline-2 hover:outline-accent-overlay focus:scale-105 focus:outline focus:outline-2 focus:outline-accent-overlay after:content-[''] after:absolute after:inset-0 after:pointer-events-none bg-gradient-to-r from-accent-dark via-accent-regular to-accent-dark dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0">
+          <CallToAction href="/projects/" target="_self" class="relative flex py-2 px-8 rounded-full overflow-hidden shadow-bs-md text-center text-large text-accent-text-over no-underline leading-tight whitespace-nowrap place-content-center gap-3 transition ease-in-out duration-200 hover:scale-105 hover:outline hover:outline-2 hover:outline-accent-overlay focus:scale-105 focus:outline focus:outline-2 focus:outline-accent-overlay after:content-[''] after:absolute after:inset-0 after:pointer-events-none bg-gradient-to-r from-accent-dark via-accent-regular to-accent-dark dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0">
             Ver proyectos
             <Icon icon="arrow-right" size="1.6rem" />
           </CallToAction>
         </div>
       </section>
     </div>
+    <Contact />
   </section>
 </Base>

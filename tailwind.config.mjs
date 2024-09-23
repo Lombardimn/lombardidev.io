@@ -65,6 +65,7 @@ export default {
 				'dropmd': 'drop-shadow(0px 28px 11px rgba(9, 11, 17, 0.01)) drop-shadow(0px 16px 10px rgba(9, 11, 17, 0.03)) drop-shadow(0px 7px 7px rgba(9, 11, 17, 0.05)) drop-shadow(0px 2px 4px rgba(9, 11, 17, 0.06))'
 			},
 			boxShadow: {
+				'bs-sm': '0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),	0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03)',
 				'bs-md': '0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03), 0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06)',
 				'bs-lg': '0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),	0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12)',
 				'bs-inset': 'inset 0 0 0 1px var(--accent-overlay)'
