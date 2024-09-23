@@ -1,0 +1,34 @@
+---
+import Grid from "@/components/Global/Grid.astro"
+import Hero from "@/components/Global/Hero.astro"
+import PorfolioPreview from "@/components/Global/PorfolioPreview.astro"
+import Base from "@/layout/Base.astro"
+import { getCollection } from "astro:content"
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title = 'Proyectos | @lombardidev', description = 'Listado completo de proyectos realizados.' } = Astro.props
+
+const works = await getCollection("projects")
+---
+
+<Base title={title} description={description}>
+  <div>
+    <main>
+      <Hero align="start" greeting="Proyectos" profession="Listado completo de proyectos realizados.">
+        <Grid variant="small">
+          {
+            works.map((project) => (
+              <li>
+                <PorfolioPreview project={project} />
+              </li>
+            ))
+          }
+        </Grid>
+      </Hero>
+    </main>
+  </div>
+</Base>

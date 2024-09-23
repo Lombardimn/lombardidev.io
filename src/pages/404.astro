@@ -1,0 +1,17 @@
+---
+import Base from "@/layout/Base.astro";
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title= '404 | Not Found', description= 'Page not found' } = Astro.props
+---
+<Base title={title} description={description}>
+  <section class="flex flex-col items-center">
+    <h2 class="text-center text-2xlarge mb-4">Lo siento...</h2>
+    <p class="text-large">No se encontro la pagina solicitada</p>
+    <img src="/images/body/404.svg" alt="Un robot en el suelo al que se le salieron piezas internas y tiene un cartel indicando el error 404 de pagina no encontrada." class="h-96 w-96 m-auto">
+  </section>
+</Base>
