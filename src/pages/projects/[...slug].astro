@@ -1,0 +1,95 @@
+---
+import CallToAction from '@/components/Global/CallToAction.astro'
+import Contact from '@/components/Global/Contact.astro'
+import Hero from '@/components/Global/Hero.astro'
+import Icon from '@/components/Global/Icon.astro'
+import Pill from '@/components/Global/Pill.astro'
+import Base from '@/layout/Base.astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
+
+export interface Props {
+  entry: CollectionEntry<'projects'>
+}
+
+export const getStaticPaths = async () => {
+  const works: CollectionEntry<'projects'>[] = (await getCollection('projects'))
+  return works.map(entry => ({ params: { slug: entry.slug }, props: { entry } }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <section class="flex flex-col gap-20 text-base">
+    <div class="flex-flex-col gap-16">
+      <article>
+        <div class="w-full max-w-[83rem] flex flex-col gap-2">
+          <a href="/projects/" class="hidden md:flex gap-2 items-center underline underline-offset-4 decoration-transparent decoration-solid hover:focus:decoration-current">
+            <Icon icon="arrow-left" size="1.33rem" />
+            Mis Proyectos
+          </a>
+
+          <Hero greeting={entry.data.title} align="center">
+            <div class="flex flex-col p-2 gap-6 justify-between items-center">
+              <div class="flex gap-2">
+                {
+                  entry.data.tags.map((t: unknown) => <Pill>{t}</Pill>)
+                }
+              </div>
+              <p class="text-large font-body max-w-[54ch] text-center">
+                {entry.data.description}
+              </p>
+            </div>
+          </Hero>
+        </div>
+      </article>
+
+      <article class="w-full max-w-[83rem] mx-auto flex flex-col gap-2">
+        <div class="content flex flex-col gap-10 max-w-[65ch] mx-auto space-y-4">
+          {
+            entry.data.image && (
+              <img
+                src={entry.data.image}
+                alt={entry.data.altImage}
+                loading="lazy"
+                decoding="async"
+                transition:name={`image-${entry.data.idImage}-projects`}
+                transition:persist
+                class=" rounded-3xl shadow-bs-sm border-2 border-solid border-c-800 mt-12"
+              />
+            )
+          }
+          <div class="w-60 h-12 m-auto">
+            <CallToAction href={entry.data.url} target="_self" class="relative flex py-2 px-8 rounded-full overflow-hidden shadow-bs-md text-center text-large text-accent-text-over no-underline leading-tight whitespace-nowrap place-content-center gap-3 transition ease-in-out duration-200 hover:scale-105 hover:outline hover:outline-2 hover:outline-accent-overlay focus:scale-105 focus:outline focus:outline-2 focus:outline-accent-overlay after:content-[''] after:absolute after:inset-0 after:pointer-events-none bg-gradient-to-r from-accent-dark via-accent-regular to-accent-dark dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0">
+              Ver
+              <Icon icon='browser' size="1.33rem" />
+            </CallToAction>
+          </div>
+          <div class="content max-w-[65ch] mx-auto space-y-4">
+            <Content/>
+          </div>
+        </div>
+      </article>
+    </div>
+    <Contact />
+  </section>
+</Base>
+
+<style>
+  .content :global(h1, h2, h3, h4, h5) { margin: 1.5rem 0; }
+
+  .content :global(h2) { font-size: var(--text-2xl); }
+
+  .content :global(h3) { font-size: var(--text-xl); }
+
+  .content :global(blockquote) {
+		font-size: var(--text-lg);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 1.1;
+		padding-inline-start: 1.5rem;
+		border-inline-start: 0.25rem solid var(--accent-dark);
+		color: var(--gray-0);
+	}
+</style>

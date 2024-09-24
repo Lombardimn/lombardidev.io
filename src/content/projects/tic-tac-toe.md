@@ -6,7 +6,7 @@ image: /images/projects/tic-tac-toe.webp
 altImage: Foto donde se muestra la interface del juego que se compone del tablero, botonera e informe de turno
 description: Tic Tac Toe es un juego clásico que se utiliza a menudo como ejemplo para enseñar programación y lógica.
 url: https://lombardi-tic-tac-toe.netlify.app/
-tags: [React, CSS, SWC, ESLint, StandarJs]
+tags: [React, CSS, SWC, ESLint]
 ---
 
 ## Reactivo con un Videojuego

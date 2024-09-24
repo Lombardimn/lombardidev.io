@@ -1,9 +1,10 @@
 ---
+import Contact from "@/components/Global/Contact.astro"
 import Grid from "@/components/Global/Grid.astro"
 import Hero from "@/components/Global/Hero.astro"
 import PorfolioPreview from "@/components/Global/PorfolioPreview.astro"
 import Base from "@/layout/Base.astro"
-import { getCollection } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content"
 
 interface Props {
   title: string
@@ -12,14 +13,16 @@ interface Props {
 
 const { title = 'Proyectos | @lombardidev', description = 'Listado completo de proyectos realizados.' } = Astro.props
 
-const works = await getCollection("projects")
+const works: CollectionEntry<"projects">[] = (await getCollection("projects"))
+  .sort((a: CollectionEntry<"projects">, b: CollectionEntry<"projects">) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+  )
 ---
 
 <Base title={title} description={description}>
-  <div>
-    <main>
+  <section class="flex flex-col gap-20">
+    <div class="w-full max-w-[83rem] mx-auto flex flex-col gap-8">
       <Hero align="start" greeting="Proyectos" profession="Listado completo de proyectos realizados.">
-        <Grid variant="small">
+        <Grid variant="offset">
           {
             works.map((project) => (
               <li>
@@ -29,6 +32,7 @@ const works = await getCollection("projects")
           }
         </Grid>
       </Hero>
-    </main>
-  </div>
+    </div>
+    <Contact />
+  </section>
 </Base>
