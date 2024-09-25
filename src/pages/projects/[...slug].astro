@@ -52,11 +52,10 @@ const { Content } = await entry.render()
               <img
                 src={entry.data.image}
                 alt={entry.data.altImage}
-                loading="lazy"
-                decoding="async"
                 transition:name={`image-${entry.data.idImage}-projects`}
-                transition:persist
-                class=" rounded-3xl shadow-bs-sm border-2 border-solid border-c-800 mt-12"
+                class="rounded-3xl shadow-bs-sm border-2 border-solid border-c-800 mt-12"
+                width="700"
+                height="525"
               />
             )
           }

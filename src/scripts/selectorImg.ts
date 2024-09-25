@@ -1,6 +1,5 @@
 let isDarkMode = document.documentElement.classList.contains('theme-dark')
 
-console.log('render del html:',isDarkMode)
 const imgMain = document.querySelector('#img-main')
 const btn = document.querySelector('#scheme')!
 

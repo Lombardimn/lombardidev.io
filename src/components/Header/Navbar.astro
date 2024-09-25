@@ -17,7 +17,7 @@ interface IconLink extends TextLink {
 // Textos para el Menu
 const textLinks: TextLink[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'Proyectos', href: '/work/' },
+  { label: 'Proyectos', href: '/projects/' },
   { label: 'Sobre Mí', href: '/about/' }
 ]
 
@@ -59,7 +59,7 @@ const iconLinks: IconLink[] = [
       </menu-button>
     </section>
 
-    <section id="menu-content" hidden class="absolute left-0 right-0">
+    <section id="menu-content" hidden class="absolute left-0 right-0 py-2">
       <ul class="m-0 flex flex-col gap-4 text-medium leading-tight list-none p-8 bg-c-999 border-b-2 border-solid border-c-800">
         {
           textLinks.map(({label, href}) => (

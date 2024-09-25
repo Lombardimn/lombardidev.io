@@ -1,0 +1,65 @@
+---
+import Card from '@/components/Global/Card.astro'
+import Hero from '@/components/Global/Hero.astro'
+import Base from '@/layout/Base.astro'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title = 'Sobre Mí | @lombardidev', description= 'Información sobre quien soy' } = Astro.props
+---
+<Base title={title} description={description}>
+  <section class="flex flex-col gap-14">
+    <article class="flex flex-col gap-8 w-full max-w-[83rem] mx-auto">
+      <Hero greeting='Sobre Mí' profession='Agradezco que hayas llegado hasta aqui, te invito a saber más sobre mi persona.' align="start">
+        <img src="/images/body/about.webp" width="776.5" height="436.5" alt="Foto de Matias Lombardi en su area de trabajo" class="mt-6 rounded-3xl shadow-md m-auto">
+      </Hero>
+    </article>
+    <section class="max-sm:hidden flex flex-col gap-2 text-c-200">
+      <h2 class="col-start-1 text-2xlarge text-c-0 pb-4">Historia</h2>
+      <div class="col-start-2 col-end-4 pb-4 text-large">
+        <p class="mt-0 text-balance">
+            Oriundo de la provincia de Buenos Aires, de niño migré a la ciudad de Córdoba, donde descubrí <span class="bg-accent-regular text-accent-text-over p-[2px]">mi pasión</span> por la tecnología. Inicialmente, decidí enfocarme en la parte física, adquiriendo conocimientos técnicos sobre hardware.
+        </p>
+        <p class="mt-3 text-balance">
+            Con el tiempo, mientras trabajaba en la industria manufacturera, <span class="bg-accent-regular text-accent-text-over p-[2px]">tuve la experiencia de desarrollar mi primer sistema en Visual Basic for Applications</span>, lo que en ese momento fue un logro significativo para mí. Este hecho encendió mi pasión por la programación. Decidí cambiar el rumbo de mi vida y me encaminé hacia la carrera de Ingeniería de Sistemas, dejando atrás mi trabajo anterior.
+        </p>
+        <p class="mt-3 text-balance">
+            Tuve la oportunidad de aplicar tempranamente mis conocimientos en el entorno laboral de sistemas, participando en proyectos relacionados con SAP.
+        </p>
+        <p class="mt-3 text-balance">
+            Con el paso de los años, me di cuenta de que <span class="bg-accent-regular text-accent-text-over p-[2px]">la gestión de proyectos era una de mis mejores habilidades</span>, pero a medida que realizaba más tareas, algo no me satisfacía: no podía plasmar las funcionalidades o procesos que diseñaba. 
+        </p>
+        <p class="mt-3 text-balance">
+            Mi pasión por la programación me impulsó a seguir aprendiendo y creciendo. Decidí poner manos a la obra y comencé a especializarme como desarrollador. <span class="bg-accent-regular text-accent-text-over p-[2px]">Hoy en día, disfruto de la experiencia analítica en proyectos altamente complejos y de la capacidad para crear soluciones de alto rendimiento.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2 text-c-200">
+      <Card title='Historia' description='Breve resumen'>
+        <p class="mt-0 text-balance">
+          Oriundo de la provincia de Buenos Aires, de niño migré a la ciudad de Córdoba, donde descubrí <span class="bg-accent-regular text-accent-text-over p-[2px]">mi pasión</span> por la tecnología. Inicialmente, decidí enfocarme en la parte física, adquiriendo conocimientos técnicos sobre hardware.
+        </p>
+        <p class="mt-3 text-balance">
+            Con el tiempo, mientras trabajaba en la industria manufacturera, <span class="bg-accent-regular text-accent-text-over p-[2px]">tuve la experiencia de desarrollar mi primer sistema en Visual Basic for Applications</span>, lo que en ese momento fue un logro significativo para mí. Este hecho encendió mi pasión por la programación. Decidí cambiar el rumbo de mi vida y me encaminé hacia la carrera de Ingeniería de Sistemas, dejando atrás mi trabajo anterior.
+        </p>
+        <p class="mt-3 text-balance">
+            Tuve la oportunidad de aplicar tempranamente mis conocimientos en el entorno laboral de sistemas, participando en proyectos relacionados con SAP.
+        </p>
+        <p class="mt-3 text-balance">
+            Con el paso de los años, me di cuenta de que <span class="bg-accent-regular text-accent-text-over p-[2px]">la gestión de proyectos era una de mis mejores habilidades</span>, pero a medida que realizaba más tareas, algo no me satisfacía: no podía plasmar las funcionalidades o procesos que diseñaba. 
+        </p>
+        <p class="mt-3 text-balance">
+            Mi pasión por la programación me impulsó a seguir aprendiendo y creciendo. Decidí poner manos a la obra y comencé a especializarme como desarrollador. <span class="bg-accent-regular text-accent-text-over p-[2px]">Hoy en día, disfruto de la experiencia analítica en proyectos altamente complejos y de la capacidad para crear soluciones de alto rendimiento.</span>
+        </p>
+      </Card>
+
+      <Card title='Educación' description='Instituciones Educativas'>
+        
+      </Card>
+    </section>
+  </section>
+</Base>
