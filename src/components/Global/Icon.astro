@@ -7,13 +7,15 @@ interface Props {
   color?: string
   gradient?: boolean
   size?: string
+  class?: string
 }
 
 const {
   color = 'currentColor',
   gradient,
   icon,
-  size
+  size,
+  class: className
 } = Astro.props
 
 const iconPath = iconPaths[icon]
@@ -31,6 +33,7 @@ if (size) attrs.style = { '--size': size }
   aria-hidden='true'
   fill={gradient ? `url(#${gradientId})` : color}
   stroke={gradient ? `url(#${gradientId})` : color}
+  class={className}
   {...attrs}
 >
   <g set:html={iconPath} />

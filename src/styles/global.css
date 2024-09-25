@@ -42,6 +42,11 @@
     --accent-subtle-overlay: var(--accent-overlay);
     --accent-text-over: #02080D;
 
+    --gradient-stop-1: var(--accent-light);
+    --gradient-stop-2: var(--accent-regular);
+    --gradient-stop-3: var(--accent-dark);
+    --acccent-gadient: linear-gradient(150deg, var(--gradient-stop-1),	var(--gradient-stop-2),	var(--gradient-stop-3));
+
     --theme-transition: 0.2s ease-in-out;
   }
 

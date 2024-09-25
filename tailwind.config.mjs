@@ -17,7 +17,7 @@ export default {
 				'c-800': '#e3e6ee',
 				'c-900': '#f3f4f7',
 				'c-999-basis': '0, 0%, 100%',
-				'c-999-40': 'hsla(var(0, 0%, 100%), 0.4)',
+				'c-999-40': 'hsla(0, 0%, 100%, 0.4)',
 				'c-999': '#E6EEF5',
 				'accent-light': '#05F283',
 				'accent-regular': '#00ec98',

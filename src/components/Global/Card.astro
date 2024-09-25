@@ -9,26 +9,21 @@ interface Props {
 const { title, description } = Astro.props
 
 ---
-<div class="border-2 border-solid border-c-600 p-4 rounded-xl shadow-bs-sm">
-  <section class="flex justify-between items-center">
-    <h2 class="text-2xlarge text-c-0 pb-2">{title}</h2>
-    <button id="card-button" aria-expanded="false">
-      <Icon icon="caret-up" size="1.6rem" />
-    </button>
-  </section>
-  <p class="pb-2 italic">{description}</p>
-  <section id="card-content" hidden class="text-large">
-    <slot />
-  </section>
+<div class="card hover:animate-background rounded-xl hover:bg-gradient-to-r hover:from-accent-light hover:via-accent-regular hover:to-accent-dark p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
+  <div class="bg-c-900 w-full h-full rounded-xl p-2">
+    <section class="flex justify-between items-center">
+      <h2 class="text-2xlarge text-c-0 pb-2">{title}</h2>
+      <button class="card-button" aria-expanded="false">
+        <Icon icon="caret-up" size="1.6rem" class='icon-up'/>
+        <Icon icon="caret-down" size="1.6rem" class='icon-down hidden'/>
+      </button>
+    </section>
+    <p class="pb-2 italic">{description}</p>
+    <section hidden class="card-content text-large">
+      <div class="h-[1px] w-5/6 mx-auto my-5 bg-c-500 shadow-bs-sm"></div>
+      <slot />
+    </section>
+  </div>
 </div>
 
-<script>
-  const btn = document.getElementById('card-button')!
-  const ctt = document.getElementById('card-content')!
-  
-  btn.addEventListener('click', () => {
-    btn.setAttribute('aria-expanded', ctt.hidden ? 'true' : 'false')
-    ctt.hidden = !ctt.hidden
-  })
-
-</script>
+<script src="../../scripts/cardExpanded.ts"></script>

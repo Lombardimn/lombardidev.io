@@ -25,7 +25,7 @@ const works: CollectionEntry<'projects'>[] = (await getCollection("projects"))
 ---
 <Base title={title} description={description}>
 	<section class="flex flex-col gap-20">
-    <div class="flex flex-col w-full max-w-[83rem] mx-auto gap-8">
+    <div class="flex flex-col w-full max-w-[83rem] mx-auto gap-6">
       <section class="flex flex-col items-center gap-8">
         <Hero 
           align="start"
@@ -69,18 +69,20 @@ const works: CollectionEntry<'projects'>[] = (await getCollection("projects"))
           </CallToAction>
         </div>
 
-        <section class="border-2 border-solid border-c-800 rounded-xl p-6 bg-c-999-40 shadow-bs-sm flex flex-col gap-12">
-          <Skill iconDescription="monitor" title="Desarrollo Web" color="bg-accent-regular" size="2.5rem">
-            Mi objetivo es crear experiencias atractivas e intuitivas. Me apasiona enfrentar desafíos de la industria y contribuir al crecimiento.
-          </Skill>
-
-          <Skill iconDescription="terminal-window" title="Backend & Frontend" color="bg-d-accent-regular" size="2.5rem">
-            Este rol me ofrece adaptabilidad en distintos proyectos y roles de desarrollo, brindándome valiosas oportunidades de aprendizaje.
-          </Skill>
-
-          <Skill iconDescription="strategy" title="Product Owner" color="bg-d-accent-regular" size="2.5rem">
-            Traduzco requerimientos de clientes en soluciones tecnológicas. Mi rol va desde analizar necesidades, diseñar y planificar, hasta colaborar con equipos de desarrollo.
-          </Skill>
+        <section class="card rounded-xl bg-gradient-to-r from-accent-light via-accent-regular to-accent-dark p-0.5 shadow-bs-sm dark:from-[#ca7879] dark:via-d-accent-regular dark:to-d-accent-light dark:text-cd-0">
+          <div class="flex flex-col gap-12 bg-c-999 p-2 rounded-xl">
+            <Skill iconDescription="monitor" title="Desarrollo Web" color="bg-accent-regular" size="2.5rem">
+              Mi objetivo es crear experiencias atractivas e intuitivas. Me apasiona enfrentar desafíos de la industria y contribuir al crecimiento.
+            </Skill>
+  
+            <Skill iconDescription="terminal-window" title="Backend & Frontend" color="bg-d-accent-regular" size="2.5rem">
+              Este rol me ofrece adaptabilidad en distintos proyectos y roles de desarrollo, brindándome valiosas oportunidades de aprendizaje.
+            </Skill>
+  
+            <Skill iconDescription="strategy" title="Product Owner" color="bg-d-accent-regular" size="2.5rem">
+              Traduzco requerimientos de clientes en soluciones tecnológicas. Mi rol va desde analizar necesidades, diseñar y planificar, hasta colaborar con equipos de desarrollo.
+            </Skill>
+          </div>
         </section>
       </section>
     </div>
