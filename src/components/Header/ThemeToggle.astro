@@ -3,15 +3,15 @@ import Icon from "@/components/Global/Icon.astro";
 ---
 
 <theme-toggle>
-  <button id="scheme" aria-pressed='false' class="flex border-0 rounded-full p-0 bg-c-999 shadow-bs-inset cursor-pointer">
+  <button id="scheme" aria-pressed='false' class="flex border-0 rounded-full p-0 bg-c-999 dark:bg-cd-900 shadow-bs-inset cursor-pointer">
     <span class="sr-only">Tema Oscuro</span>
     <span 
-      class="icon light z-10 relative flex p-2 w-8 h-8 text-base text-accent-overlay before:content[''] before:-z-10 before:absolute before:inset-0 before:bg-accent-regular before:rounded-full "
+      class="icon light z-10 relative flex p-2 w-8 h-8 text-base text-accent-overlay dark:text-d-accent-overlay before:content[''] before:-z-10 before:absolute before:inset-0 before:bg-accent-regular dark:before:bg-d-accent-regular before:rounded-full "
     >
       <Icon icon="sun" />
     </span>
     <span 
-      class="icon dark z-10 relative flex p-2 w-8 h-8 text-base text-accent-overlay">
+      class="icon dark z-10 relative flex p-2 w-8 h-8 text-base text-accent-overlay dark:text-d-accent-overlay">
       <Icon icon="moon-stars" />
     </span>
   </button>

@@ -5,7 +5,7 @@ import Credential from './Credential.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="flex flex-col gap-12 mt-auto pt-12 px-8 pb-12 text-center text-c-400 text-medium md:text-large md:flex-row md:justify-between md:py-10 md:px-20">
+<footer class="flex flex-col gap-12 mt-auto pt-12 px-8 pb-12 text-center text-c-400 dark:text-cd-400 text-medium md:text-large md:flex-row md:justify-between md:py-10 md:px-20">
 	<Credential />
 	<section class="flex flex-col gap-2 md:flex-row md:gap-4 md:flex-wrap">
 		<p class="flex justify-center gap-2 items-center">
@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear();
 				target="_blank" 
 				rel="noopener noreferrer"  
 				href="https://astro.build/"
-				class="text-c-400 underline decoration-transparent decoration-solid underline-offset-4 transition ease-in-out duration-300 flex flex-row hover:text-accent-regular focus:text-accent-regular dark:hover:text-accent-regular"
+				class="text-c-400 dark:text-cd-400 underline decoration-transparent decoration-solid underline-offset-4 transition ease-in-out duration-300 flex flex-row hover:focus:text-accent-regular dark:hover:focus:text-d-accent-regular"
 			>
 				Astro
 				<Icon icon="rocket-launch" size="1.2em" />

@@ -43,7 +43,7 @@ export default {
 				'd-accent-dark': '#c561f6',
 				'd-accent-overlay': 'hsla(280, 89%, 67%, 0.33)',
 				'd-accent-subtle-overlay': 'hsla(281, 81%, 36%, 0.33)',
-				'd-accent-text-over': 'var(--gray-0)',
+				'd-accent-text-over': '#ffffff',
 			},
 			fontSize: {
 				'small': '0.875rem',
