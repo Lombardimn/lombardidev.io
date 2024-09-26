@@ -9,5 +9,5 @@ btn.addEventListener('click', () => {
 })
 
 const queryTheme = () => {
-  imgMain?.setAttribute('src', isDarkMode ? '/images/body/main-dark.png' : '/images/body/main-3.png')
+  imgMain?.setAttribute('src', isDarkMode ? '/images/body/main-dark.webp' : '/images/body/main-3.webp')
 }

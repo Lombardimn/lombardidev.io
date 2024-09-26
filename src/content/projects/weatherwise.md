@@ -3,7 +3,7 @@ title: Weather Wise
 description: Aplicación Web para consultar el clima de una ciudad, mediante la API de OpenWeather.
 publishedAt: 2024-05-09 00:00:00
 idImage: '5'
-image: /images/projects/weather-wise.jpg
+image: /images/projects/weather-wise.webp
 altImage: Primera plana de la pagina vista como App en tablets.
   Una PWA (Progressive Web App) para consultar el clima de una ciudad, mediante la API de OpenWeather.
 url: https://lombardidev-weatherwise.netlify.app/
