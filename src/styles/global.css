@@ -118,7 +118,7 @@
   }
 
   a {
-    color: var(--accent-regular);
+    color: var(--accent-dark);
   }
 
   @font-face {

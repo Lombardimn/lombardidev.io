@@ -58,7 +58,7 @@ const works: CollectionEntry<'projects'>[] = (await getCollection("projects"))
           </article>
         </Hero>
 
-        <img id='img-main' src='/images/body/main-3.webp' alt="figura animada que representa a Matias Lombardi sentado en un escritorio." width="500" height="500">
+        <img id='img-main' src='/images/body/main-3-small.webp' data-src-set="/images/body/main-3.webp 500w, /images/body/main-3-small.webp 305w" alt="figura animada que representa a Matias Lombardi sentado en un escritorio." loading="lazy" sizes="(max-width: 600px) 305px, 500px">
         <div class="w-80 pt-4 m-auto">
           <CallToAction 
             href="/docs/lombardi-cv.pdf"
@@ -116,5 +116,25 @@ const works: CollectionEntry<'projects'>[] = (await getCollection("projects"))
   </section>
 </Base>
 
+<script is:inline>
+  if (typeof isDarkMode === 'undefined') {
+    let isDarkMode = document.documentElement.classList.contains('theme-dark')
 
-<script src="../scripts//selectorImg.ts"></script>
+    const imgMain = document.querySelector('#img-main')
+    const btn = document.querySelector('#scheme')
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        isDarkMode = !isDarkMode
+        queryTheme()
+      })
+    }
+
+    const queryTheme = () => {
+      imgMain?.setAttribute('src', isDarkMode ? '/images/body/main-dark.webp' : '/images/body/main-3.webp')
+    }
+
+    // Inicializa el estado del tema correctamente al cargar
+    queryTheme()
+  }
+</script>

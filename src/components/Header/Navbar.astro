@@ -45,7 +45,7 @@ const iconLinks: IconLink[] = [
     <section class="relative flex justify-between gap-2 p-6">
       <a href="/" class="flex gap-2 items-center leading-tight text-c-0 dark:text-cd-0">
         <div class="bg-c-600/20 dark:bg-c-600/20 rounded-full bg-opacity-50 backdrop-blur-lg w-20 h-20 absolute top-3">
-          <img src="/logomain.webp" alt="Logo de lombardidev" loading="lazy" width="80" height="80" class="drop-shadow-dropmd">
+          <img src="/logomain-small.webp" alt="Logo de lombardidev" loading="lazy" width="80" height="80" class="drop-shadow-dropmd">
         </div>
       </a>
 
@@ -67,7 +67,7 @@ const iconLinks: IconLink[] = [
               <a
                 aria-current={Astro.url.pathname === href}
                 class:list={[
-                  'inline-block', 'text-c-300', 'active:text-c-0',
+                  'inline-block', 'text-c-300', 'dark:text-cd-200', 'active:text-c-0', 'dark:active:text-cd-0',
                   {
                     active: Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(href))
                   }

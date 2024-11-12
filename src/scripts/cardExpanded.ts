@@ -6,8 +6,6 @@ document.querySelectorAll('.card-button').forEach(button => {
     const iconUp = btn.querySelector('.icon-up') as HTMLElement // El icono dentro del botón superior
     const iconDown = btn.querySelector('.icon-down') as HTMLElement // El icono dentro del botón inferior
 
-    console.log(iconUp, iconDown)
-
     const isExpanded = content.hidden ? 'true' : 'false'
     btn.setAttribute('aria-expanded', isExpanded)
     content.hidden = !content.hidden

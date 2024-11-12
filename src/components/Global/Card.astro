@@ -10,7 +10,7 @@ const { title, description } = Astro.props
 
 ---
 <div class="card hover:animate-background rounded-xl hover:bg-gradient-to-r hover:from-accent-light hover:via-accent-regular hover:to-accent-dark dark:hover:from-d-accent-light dark:hover:via-d-accent-regular dark:hover:to-d-accent-dark p-1 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
-  <div class="bg-c-900 dark:bg-cd-900 w-full h-full rounded-xl p-2">
+  <div class="bg-c-900 dark:bg-cd-900/80 w-full h-full rounded-xl p-2">
     <section class="flex justify-between items-center">
       <h2 class="text-2xlarge text-c-0 dark:text-cd-0 pb-2">{title}</h2>
       <button class="card-button" aria-expanded="false">
@@ -18,7 +18,7 @@ const { title, description } = Astro.props
         <Icon icon="caret-down" size="1.6rem" class='icon-down hidden'/>
       </button>
     </section>
-    <p class="pb-2 italic">{description}</p>
+    <p class="pb-2 italic dark:text-cd-200">{description}</p>
     <section hidden class="card-content text-large">
       <div class="h-[1px] w-5/6 mx-auto my-5 bg-c-500 dark:bg-cd-500 shadow-bs-sm"></div>
       <slot />
